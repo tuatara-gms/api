@@ -1,0 +1,6 @@
+runtime: nodejs
+env: flex
+handlers:
+- url: /*
+  http_headers:
+    Access-Control-Allow-Origin: https://8080-dot-9728892-dot-devshell.appspot.com
