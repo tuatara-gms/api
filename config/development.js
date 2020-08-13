@@ -5,7 +5,7 @@ module.exports = {
 	},
 	jwtPrivateKey: 'qwertyuiopasdfgh',
 	port: 6070,
-	db: 'mongodb://localhost/tservice',
+	db: 'mongodb://localhost/tuatara',
 	googleClientSecret: 'nWcUAoCvmSM9ajz2fsZovInM',
 	google: {
 		appId:

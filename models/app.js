@@ -3,7 +3,7 @@ const config = require('../config')
 const Joi = require('joi')
 const mongoose = require('mongoose')
 const _ = require('lodash')
-const deskafSchema = new mongoose.Schema({
+const appInstanceSchema = new mongoose.Schema({
 	background: {
 		type: String,
 		required: true,
@@ -61,19 +61,19 @@ const deskafSchema = new mongoose.Schema({
 	},
 	title: {
 		type: String,
-		default: 'Techno Service'
+		default: 'Tuatara Garage'
 	},
 	subtitle: {
 		type: String,
-		default: 'Egypt'
+		default: 'Coc, inc'
 	},
 	address: {
 		type: String,
-		default: '9 Mohamed Refaat, El nozha el gededa'
+		default: 'Heliopoles, Egypt'
 	},
 	phones: {
 		type: Array,
-		default: ['01008645544']
+		default: ['01011133122']
 	},
 	promotions: {
 		type: Array,
@@ -82,9 +82,9 @@ const deskafSchema = new mongoose.Schema({
 })
 
 
-const Deskaf = mongoose.model('Deskaf', deskafSchema)
+const AppInstance = mongoose.model('AppInstance', appInstanceSchema)
 
-function validateDeskaf(deskaf) {
+function validateAppInstance(appInstance) {
 	const schema = {
 		background: Joi.string().min(1).max(2000),
 		jobs_count: Joi.number().min(0),
@@ -101,8 +101,8 @@ function validateDeskaf(deskaf) {
 		currency: Joi.optional(),
 		vat: Joi.optional(),
 	}
-	return Joi.validate(deskaf, schema)
+	return Joi.validate(appInstance, schema)
 }
 
-exports.Deskaf = Deskaf 
-exports.validate = validateDeskaf
+exports.AppInstance = AppInstance 
+exports.validate = validateAppInstance

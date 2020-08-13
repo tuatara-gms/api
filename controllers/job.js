@@ -6,7 +6,7 @@ const config = require('../config')
 const { Job, ValidateJob } = require('../models/job')
 const { Move } = require('../models/move')
 const { Stock } = require('../models/stock')
-const { Deskaf } = require('../models/app')
+const { AppInstance } = require('../models/app')
 
 // Sortable Attributes
 const sortableAttributes = ['timein', 'sales', 'price']
@@ -161,14 +161,14 @@ module.exports = {
             clientRunningJobs[clientRunningJobs.length - 1].job_no
           }`
         )
-    const instance = await Deskaf.find({})
+    const instance = await AppInstance.find({})
     const job_no =
       instance && instance[0].jobs_count ? instance[0].jobs_count : 0
     const price = _.sumBy(
       req.body.operations,
       operation => (operation.price + operation.fees) * operation.count
     )
-    await Deskaf.updateMany({}, { $set: { jobs_count: job_no + 1 } })
+    await AppInstance.updateMany({}, { $set: { jobs_count: job_no + 1 } })
     // Inheret Last Requirements
     const clientJobs = await Job.find({
       'client.phone': req.body.client.phone,
