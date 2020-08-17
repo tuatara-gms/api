@@ -24,7 +24,7 @@
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.20",
     "mime-types": "^2.1.22",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
