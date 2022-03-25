@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +26,7 @@
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.20",
     "mime-types": "^2.1.22",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
@@ -33,6 +35,8 @@
     "superagent": "^5.1.0",
     "util": "^0.12.1",
     "winston": "^3.2.0",
-    "winston-mongodb": "^5.0.0"
-  }
+    "winston-mongodb": "^5.0.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
