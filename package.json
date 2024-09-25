@@ -33,6 +33,6 @@
     "superagent": "^5.1.0",
     "util": "^0.12.1",
     "winston": "^3.2.0",
-    "winston-mongodb": "^5.0.0"
+    "winston-mongodb": "^6.0.0"
   }
 }
